@@ -1,0 +1,16 @@
+include:
+  # main template
+  - project: 'gitlab-ci-templates/mkdocs'
+    ref: '1.2.0'
+    file: '/templates/gitlab-ci-mkdocs.yml'
+  # GitLab pages variant
+  - project: 'gitlab-ci-templates/mkdocs'
+    ref: '1.2.0'
+    file: '/templates/gitlab-ci-mkdocs-pages.yml'
+
+variables:
+  MKD_REQUIREMENTS: "mkdocs-material"
+
+stages:
+  - "build"
+  - "publish"
